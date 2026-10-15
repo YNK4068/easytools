@@ -1,9 +1,14 @@
 import React from "react";
-import PassportPhotoMaker from "./components/PassportPhotoMaker";
+import NavBar from './components/NavBar.jsx'
+import BodyComp from "./pages/BodyComp.jsx";
 
 function App() {
   return (
-    <PassportPhotoMaker />
+    <>
+      <NavBar/>
+      <BodyComp/>
+
+    </>
   );
 }
 
