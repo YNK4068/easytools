@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/easytools/static/css/main.4cc45dd7.css",
+    "main.js": "/easytools/static/js/main.af230305.js",
+    "static/js/453.511e3390.chunk.js": "/easytools/static/js/453.511e3390.chunk.js",
+    "static/media/Easytoolslogo.png": "/easytools/static/media/Easytoolslogo.e220174a54b6dcd8ce99.png",
+    "static/media/instagram.png": "/easytools/static/media/instagram.75e0546a6b5abe4c0506.png",
+    "static/media/communication.png": "/easytools/static/media/communication.3dbb32661dff47d02e95.png",
+    "static/media/upload_filr_ico.png": "/easytools/static/media/upload_filr_ico.049d89329a7c03328f2f.png",
+    "index.html": "/easytools/index.html",
+    "main.4cc45dd7.css.map": "/easytools/static/css/main.4cc45dd7.css.map",
+    "main.af230305.js.map": "/easytools/static/js/main.af230305.js.map",
+    "453.511e3390.chunk.js.map": "/easytools/static/js/453.511e3390.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4cc45dd7.css",
+    "static/js/main.af230305.js"
+  ]
+}
