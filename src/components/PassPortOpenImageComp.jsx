@@ -3,10 +3,11 @@ import React, { useRef, useState } from 'react';
 import upload_filr_ico from '../icons/upload_filr_ico.png';
 import crop_ico from '../icons/crop_ico.png'
 
-export default function BodyComp() {
+export default function PassPortOpenImageComp() {
   const fileInputRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showPreviewSsection,setShowPreviewSection] = useState(false)
 
   // Handle image selection
   const handleImageChange = (e) => {
@@ -62,10 +63,10 @@ export default function BodyComp() {
       <div className="h-[8vh]"></div>
 
       {/* Image container */}
-      <div
-        className="my-5 sm:flex sm:justify-center sm:items-center
+      <div 
+        className={`${showPreviewSsection ? 'hidden':'block'} my-5 sm:flex sm:justify-center sm:items-center
                    sm:w-[60%] sm:h-[50vh] sm:m-auto sm:bg-white
-                   sm:rounded-2xl sm:p-3 md:h-[60vh]"
+                   sm:rounded-2xl sm:p-3 md:h-[60vh]`}
       >
         {/* File select outer div */}
         <div
@@ -120,6 +121,8 @@ export default function BodyComp() {
             {!selectedImage ? <p className="font-light text-center">
               or drag and drop image here
             </p>:""}
+
+            {/* Crop button container */}
             <div className={`flex justify-center gap-1 items-center py-3 px-4 bg-[#dcdce0] m-4 rounded-md hover:bg-[#c2c2c8] ${selectedImage ? 'block' : 'hidden'} ` }>
                   <img src={crop_ico} alt=""  className='w-8'/><p>Crop</p>
             </div>

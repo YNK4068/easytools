@@ -1,12 +1,12 @@
 import React from "react";
 import NavBar from './components/NavBar.jsx'
-import BodyComp from "./components/PassPortOpenImageComp.jsx";
+import PassPortComp from './pages/PassPortComp.jsx'
 
 function App() {
   return (
     <>
       <NavBar/>
-      <BodyComp/>
+      <PassPortComp/>
 
     </>
   );
