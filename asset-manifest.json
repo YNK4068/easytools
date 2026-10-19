@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/easytools/static/css/main.2516b4b6.css",
-    "main.js": "/easytools/static/js/main.44279e25.js",
+    "main.css": "/easytools/static/css/main.f0e870cb.css",
+    "main.js": "/easytools/static/js/main.7a6d185b.js",
     "static/js/453.511e3390.chunk.js": "/easytools/static/js/453.511e3390.chunk.js",
     "static/media/Easytoolslogo.png": "/easytools/static/media/Easytoolslogo.e220174a54b6dcd8ce99.png",
     "static/media/instagram.png": "/easytools/static/media/instagram.75e0546a6b5abe4c0506.png",
     "static/media/communication.png": "/easytools/static/media/communication.3dbb32661dff47d02e95.png",
     "static/media/upload_filr_ico.png": "/easytools/static/media/upload_filr_ico.049d89329a7c03328f2f.png",
     "index.html": "/easytools/index.html",
-    "main.2516b4b6.css.map": "/easytools/static/css/main.2516b4b6.css.map",
-    "main.44279e25.js.map": "/easytools/static/js/main.44279e25.js.map",
+    "main.f0e870cb.css.map": "/easytools/static/css/main.f0e870cb.css.map",
+    "main.7a6d185b.js.map": "/easytools/static/js/main.7a6d185b.js.map",
     "453.511e3390.chunk.js.map": "/easytools/static/js/453.511e3390.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2516b4b6.css",
-    "static/js/main.44279e25.js"
+    "static/css/main.f0e870cb.css",
+    "static/js/main.7a6d185b.js"
   ]
 }
