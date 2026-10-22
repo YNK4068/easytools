@@ -5,6 +5,7 @@ import ReactCrop, {
   centerCrop,
   makeAspectCrop,
 } from "react-image-crop";
+import bg_remove_icon from '../icons/bg_remove_icon.png'
 
 import "react-image-crop/dist/ReactCrop.css";
 
@@ -84,70 +85,119 @@ export default function PassPortPhotoComp({ image, onBack }) {
   };
 
   return (
-    <div className="w-full p-4">
-      {/* Header */}
-      <div className="flex items-center justify-between gap-3 mb-4">
-        <button
-          onClick={onBack}
-          className="px-4 py-2 border rounded-lg hover:bg-gray-100"
-        >
-          ← Back
-        </button>
+    <div className="w-full flex flex-col items-center p-4">
 
+      {/* Header */}
+      <div className="flex items-center justify-center gap-3 mb-4">
         <h2 className="text-lg font-semibold">
           Passport Photo Editor
         </h2>
-
-        {!isCropped && (
-          <button
-            onClick={handleApplyCrop}
-            disabled={!completedCrop?.width || !completedCrop?.height}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
-          >
-            Apply
-          </button>
-        )}
       </div>
 
       {/* Image / Cropper */}
-      <div className="w-full flex justify-center items-center bg-gray-100 rounded-xl p-3">
-        {preview && (
-          <div className="max-w-full">
-            {isCropped ? (
-              // Final cropped image only
-              <img
-                src={preview}
-                alt="Cropped passport photo"
-                className="block max-w-full max-h-[70vh] object-contain"
-              />
-            ) : (
-              // Cropper visible before applying
-              <ReactCrop
-                crop={crop}
-                onChange={(_, percentCrop) => setCrop(percentCrop)}
-                onComplete={(pixelCrop) => setCompletedCrop(pixelCrop)}
-                aspect={aspect}
-                minWidth={30}
-                keepSelection
+      <div className={`flex ${isCropped ? 'md:flex-row':''} flex-col items-center
+                    ${isCropped ? 'md:items-start':''}  `}>
+           
+          <div className={`w-[83vw] m-3 flex flex-col justify-center items-center  bg-white  rounded-xl p-3
+                          ${isCropped ? 'md:w-[20vw]':'md:w-[30vw]'}`}>
+            {preview && (
+              <div className="max-w-full">
+                {isCropped ? (
+                  // Final cropped image only
+                  <img
+                    src={preview}
+                    alt="Cropped passport photo"
+                    className="block max-w-full max-h-[70vh] object-contain"
+                  />
+                ) : (
+                  // Cropper visible before applying
+                  <ReactCrop
+                    crop={crop}
+                    onChange={(_, percentCrop) => setCrop(percentCrop)}
+                    onComplete={(pixelCrop) => setCompletedCrop(pixelCrop)}
+                    aspect={aspect}
+                    minWidth={30}
+                    keepSelection
+                  >
+                    <img
+                      ref={imgRef}
+                      src={preview}
+                      alt="Passport photo"
+                      onLoad={onImageLoad}
+                      className="block max-w-full max-h-[70vh] object-contain"
+                    />
+                  </ReactCrop>
+                )}
+              </div>
+            )}
+          
+
+            <p className="mt-3 text-sm text-gray-500 text-center">
+              {isCropped
+                ? "Passport photo cropped successfully."
+                : "Move the crop area and adjust its corners before clicking Apply."}
+            </p>
+          </div>
+        
+      
+      
+        {/* Button area */}
+        {/* for Mobile screen */}
+
+          <div className={`flex items-center justify-center gap-3 mb-4 ${isCropped ? 'hidden':''}`}>
+            <button
+              onClick={onBack}
+              className="px-4 py-2 border rounded-lg hover:bg-gray-100"
+            >
+              ← Back
+            </button>
+
+            {!isCropped && (
+              <button
+                onClick={handleApplyCrop}
+                disabled={!completedCrop?.width || !completedCrop?.height}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
               >
-                <img
-                  ref={imgRef}
-                  src={preview}
-                  alt="Passport photo"
-                  onLoad={onImageLoad}
-                  className="block max-w-full max-h-[70vh] object-contain"
-                />
-              </ReactCrop>
+                Apply
+              </button>
             )}
           </div>
-        )}
+
+          {/* Other controlls */}
+          <div className={`w-[83vw] m-3 p-3 ${isCropped ? 'flex':'hidden'} flex-col items-center rounded-lg bg-white
+                          ${isCropped ? 'md:w-[20vw]':'md:w-[30vw]'}`}>
+
+              {/* Main controls */}
+              <div className="w-[100%] flex ">
+                  <button
+                      onClick={onBack}
+                      className="w-1/2 px-4 py-2 m-2  border rounded-lg bg-gray-400 hover:bg-gray-100"
+                    >
+                      Back
+                  </button>
+
+                  <button className="w-1/2 px-4 py-2 m-2 border rounded-lg bg-gray-400 hover:bg-gray-100">
+                    Create
+                  </button>
+
+              </div>
+
+              {/* More option */}
+              <div className="w-[100%] p-3 ">
+                <label className="flex items-center bg-gray-400 p-2 rounded-lg" htmlFor="remove-bg">
+                  <p>Remove background</p> 
+                  <img className="w-6" src={bg_remove_icon} alt="" />
+                </label>
+                <input type="checkbox" name="" id="remove-bg" />
+
+              </div>
+
+
+          </div>
+        
+      
       </div>
 
-      <p className="mt-3 text-sm text-gray-500 text-center">
-        {isCropped
-          ? "Passport photo cropped successfully."
-          : "Move the crop area and adjust its corners before clicking Apply."}
-      </p>
     </div>
   );
 }
