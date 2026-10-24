@@ -9,6 +9,7 @@ import bg_remove_icon from '../icons/bg_remove_icon.png'
 
 import "react-image-crop/dist/ReactCrop.css";
 
+
 export default function PassPortPhotoComp({ image, onBack }) {
   const imgRef = useRef(null);
 
@@ -147,7 +148,7 @@ export default function PassPortPhotoComp({ image, onBack }) {
           <div className={`flex items-center justify-center gap-3 mb-4 ${isCropped ? 'hidden':''}`}>
             <button
               onClick={onBack}
-              className="px-4 py-2 border rounded-lg hover:bg-gray-100"
+              className="px-4 py-2 border rounded-lg bg-[#f1f5fb] hover:bg-gray-100"
             >
               ← Back
             </button>
@@ -171,24 +172,59 @@ export default function PassPortPhotoComp({ image, onBack }) {
               <div className="w-[100%] flex ">
                   <button
                       onClick={onBack}
-                      className="w-1/2 px-4 py-2 m-2  border rounded-lg bg-gray-400 hover:bg-gray-100"
+                      className="w-1/2 px-4 py-2 m-2  border border-[#D9DEE7] hover:bg-[#eef4fd] p-2 shadow rounded-md bg-[#f1f5fb]"
                     >
-                      Back
+                      ← Back
                   </button>
 
-                  <button className="w-1/2 px-4 py-2 m-2 border rounded-lg bg-gray-400 hover:bg-gray-100">
+                  <button className="w-1/2 px-4 py-2 m-2 border rounded-md shadow bg-[#1769F5] text-white hover:bg-blue-800">
                     Create
                   </button>
 
               </div>
 
               {/* More option */}
-              <div className="w-[100%] p-3 ">
-                <label className="flex items-center bg-gray-400 p-2 rounded-lg" htmlFor="remove-bg">
+              <div className="w-[100%] p-2 ">
+
+                {/* remove bg button */}
+                <label className="flex items-center my-4 justify-between bg-[#f1f5fb] shadow border hover:border-[#3990FF] hover:bg-[#eef4fd] p-2 rounded-md" htmlFor="remove-bg">
                   <p>Remove background</p> 
-                  <img className="w-6" src={bg_remove_icon} alt="" />
+                  <div className="flex gap-3 px-2 border-gray-300 border-l-[1px]">
+                    <img className="w-6" src={bg_remove_icon} alt="" />
+                    <input className="" type="checkbox" name="" id="remove-bg" />
+                  </div>
+
                 </label>
-                <input type="checkbox" name="" id="remove-bg" />
+                
+
+                {/* Select color */}
+                <div className="flex items-center justify-between my-4 bg-[#f1f5fb] border shadow p-2 rounded-md" htmlFor="remove-bg">
+                  <p>Color </p> 
+
+                  {/* div for color tiles */}
+                  <div className="flex  gap-3 items-center"> 
+                      <div className="size-7 rounded-sm bg-[#2B8EDB]">{/* #2B8EDB */}</div>
+                      <div className="size-7 rounded-sm bg-[#FF0000]">{/* #FF0000 */}</div>
+                      <div className="size-7 rounded-sm bg-[#FFFFFF]">{/* #FFFFFF */}</div>
+                  </div>
+
+                </div>
+
+
+                {/* Select Sheet */}
+                <div className="flex items-center justify-between my-4 bg-[#f1f5fb] border shadow p-2 rounded-md" htmlFor="remove-bg">
+                  <p>Select sheet </p> 
+
+                  {/* sheet option */}
+                  <div className="flex  gap-3 items-center"> 
+                      <div className="bg-white"></div>
+                      <div></div>
+                  </div>
+                  
+                </div>
+                
+
+                
 
               </div>
 
