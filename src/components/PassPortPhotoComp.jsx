@@ -17,6 +17,9 @@ export default function PassPortPhotoComp({ image, onBack }) {
   const [completedCrop, setCompletedCrop] = useState(null);
   const [preview, setPreview] = useState(image);
   const [isCropped, setIsCropped] = useState(false);
+  const [optRemoveBg, setOptRemoveBg] = useState(false);
+  
+
 
   // Passport ratio: 3.5 / 4.5 = 7 / 9
   const aspect = 7 / 9;
@@ -84,6 +87,8 @@ export default function PassPortPhotoComp({ image, onBack }) {
     setCrop(undefined);
     setCompletedCrop(null);
   };
+
+
 
   return (
     <div className="w-full flex flex-col items-center p-4">
@@ -187,11 +192,18 @@ export default function PassPortPhotoComp({ image, onBack }) {
               <div className="w-[100%] p-2 ">
 
                 {/* remove bg button */}
-                <label className="flex items-center my-4 justify-between bg-[#f1f5fb] shadow border hover:border-[#3990FF] hover:bg-[#eef4fd] p-2 rounded-md" htmlFor="remove-bg">
+                <label className={`flex items-center my-4 justify-between bg-[#f1f5fb] shadow border hover:border-[#3990FF] hover:bg-[#eef4fd] p-2 rounded-md
+                                    ${optRemoveBg ? 'border-[#3990FF] bg-[#d9e8ff]': ''}`} 
+                                    htmlFor="remove-bg">
                   <p>Remove background</p> 
                   <div className="flex gap-3 px-2 border-gray-300 border-l-[1px]">
                     <img className="w-6" src={bg_remove_icon} alt="" />
-                    <input className="" type="checkbox" name="" id="remove-bg" />
+                    <input className=""  
+                            type="checkbox" 
+                            checked ={optRemoveBg}
+                            onChange={(e) => setOptRemoveBg(e.target.checked)}
+                            name="" 
+                            id="remove-bg" />
                   </div>
 
                 </label>
@@ -238,34 +250,3 @@ export default function PassPortPhotoComp({ image, onBack }) {
   );
 }
 
-
-
-// ______________________________________________________________________________
-// export default function PassPortPhotoComp({ image, onBack }) {
-  
-
-//   return (
-//     <div className="w-full min-h-screen bg-gray-100 p-5">
-
-//       <button
-//         onClick={onBack}
-//         className="px-4 py-2 mb-5 bg-gray-200 hover:bg-gray-300 rounded-lg"
-//       >
-//         ← Back
-//       </button>
-
-//       <h1 className="text-2xl font-bold mb-5">
-//         Passport Photo Editor
-//       </h1>
-
-//       <div className="bg-white p-5 rounded-2xl shadow-md flex justify-center">
-//         <img
-//           src={image}
-//           alt="Selected image"
-//           className="max-w-full max-h-[70vh] object-contain"
-//         />
-//       </div>
-
-//     </div>
-//   );
-// }

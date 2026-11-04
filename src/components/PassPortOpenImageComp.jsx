@@ -149,6 +149,7 @@ export default function PassPortOpenImageComp() {
               </div>
             </div>
           </div>
+          
 
         </>
       )}
