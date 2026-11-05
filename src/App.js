@@ -7,11 +7,11 @@ function App() {
   return (
     <>
       <NavBar/>
-      {/* <PassPortComp/> */}
+      <PassPortComp/>
 
 
       {/* Testing */}
-      <TestComp />
+      {/* <TestComp /> */}
 
 
     </>
