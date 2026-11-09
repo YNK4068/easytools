@@ -94,6 +94,10 @@ export default function PassPortPhotoComp({ image, onBack }) {
     setCompletedCrop(null);
   };
 
+  function showValus(){ 
+      alert(`Remove Bg : ${optRemoveBg}\nColor : ${bgColor}`)
+  }
+
 
 
   return (
@@ -189,7 +193,7 @@ export default function PassPortPhotoComp({ image, onBack }) {
             </button>
 
             <button className="w-1/2 px-4 py-2 m-2 border rounded-md shadow bg-[#1769F5] text-white hover:bg-blue-800"
-                    onClick={() => { alert(bgColor) }}>
+                    onClick={showValus}>
               Create
             </button>
 
@@ -200,7 +204,7 @@ export default function PassPortPhotoComp({ image, onBack }) {
 
             {/* remove bg button */}
             <label className={`flex items-center my-4 justify-between bg-[#f1f5fb] shadow border hover:border-[#3990FF] hover:bg-[#eef4fd] p-2 rounded-md
-                                    ${optRemoveBg ? 'border-[#3990FF] bg-[#d9e8ff]' : ''}`}
+                                    ${optRemoveBg ? 'border-[#3990FF] bg-[#cfe2ff]' : ''}`}
               htmlFor="remove-bg">
               <p>Remove background</p>
               <div className="flex gap-3 px-2 border-gray-300 border-l-[1px]">
@@ -217,7 +221,7 @@ export default function PassPortPhotoComp({ image, onBack }) {
 
 
             {/* Select color */}
-            <div className="flex w-[20vw] items-center justify-between my-4 bg-[#f1f5fb] border shadow p-2 rounded-md">
+            <div className="flex items-center justify-between my-4 bg-[#f1f5fb] border shadow p-2 rounded-md">
 
               <p>Color</p>
 
