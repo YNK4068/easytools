@@ -296,21 +296,6 @@ export default function PassPortPhotoComp({ image, onBack }) {
             </div>
 
 
-            {/* Select Sheet */}
-            <div className="flex items-center justify-between my-4 bg-[#f1f5fb] border shadow p-2 rounded-md" htmlFor="remove-bg">
-              <p>Select sheet </p>
-
-              {/* sheet option */}
-              <div className="flex  gap-3 items-center">
-                <div className="bg-white"></div>
-                <div></div>
-              </div>
-
-            </div>
-
-
-
-
           </div>
 
 
