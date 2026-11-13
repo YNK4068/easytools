@@ -203,8 +203,8 @@ export default function PassPortPhotoComp({ image, onBack }) {
           <div className="w-[100%] p-2 ">
 
             {/* remove bg button */}
-            <label className={`flex items-center my-4 justify-between bg-[#f1f5fb] shadow border hover:border-[#3990FF] hover:bg-[#eef4fd] p-2 rounded-md
-                                    ${optRemoveBg ? 'border-[#3990FF] bg-[#d1e3ff]' : ''}`}
+            <label className={`flex items-center my-4 justify-between  shadow border hover:border-[#3990FF] hover:bg-[#eef4fd] p-2 rounded-md
+                                    ${optRemoveBg ? 'border-[#3990FF] bg-[#bcd5ff]' : 'bg-[#f1f5fb]'}`}
               htmlFor="remove-bg">
               <p>Remove background</p>
               <div className="flex gap-3 px-2 border-gray-300 border-l-[1px]">
@@ -291,17 +291,10 @@ export default function PassPortPhotoComp({ image, onBack }) {
                     }}
                   />
                 </label>
-
               </div>
             </div>
-
-
           </div>
-
-
         </div>
-
-
       </div>
 
     </div>
